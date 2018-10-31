@@ -189,6 +189,7 @@ def GetTable5DetailInfo(request):
         return render(request,'index_showtabledetailinfo.html',locals())
 
 @login_required()
+# @permission_required()
 def MyArea(request):
     if request.method == 'GET':
         username = request.user.username
