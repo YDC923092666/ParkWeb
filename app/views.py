@@ -189,7 +189,7 @@ def GetTable5DetailInfo(request):
         return render(request,'index_showtabledetailinfo.html',locals())
 
 @login_required()
-# @permission_required()
+@permission_required('app.can_edit')
 def MyArea(request):
     if request.method == 'GET':
         username = request.user.username
@@ -241,6 +241,7 @@ def MyArea(request):
         return JsonResponse(data)
 
 @login_required()
+@permission_required('app.can_edit')
 def MyAreaShoufeiyuan(request):
     if request.method == 'GET':
         username = request.user.username
@@ -276,6 +277,7 @@ def MyAreaShoufeiyuan(request):
         return JsonResponse(data)
 
 @login_required()
+@permission_required('app.can_review')
 def MyReview(request):
     if request.method == 'GET':
         return render(request, 'myreview.html', locals())
@@ -455,6 +457,7 @@ def MyReviewTaBle3Pass(request):
         return HttpResponse("OK")
 
 @login_required()
+@permission_required('app.can_edit_park')
 def MyAreaPark(request):
     if request.method == 'GET':
         return render(request, 'myareapark.html', locals())
