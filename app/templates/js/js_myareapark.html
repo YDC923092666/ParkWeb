@@ -1,0 +1,78 @@
+<script>
+    <!--table1-->
+    table.render({
+        elem: '#table1', //指定原始表格元素选择器（推荐id选择器）
+        totalRow: true,
+        width: '1673',
+        toolbar: '#toolbarDemo',
+        defaultToolbar: [],
+        cols:  [[ //标题栏
+            {type:'radio', rowspan: '2'},
+            {width: '5%', field: 'id', title: 'ID', rowspan: '2'},
+            {width: '7%', align: 'center', field: 'name', title: '停车场名', totalRowText: '合计' ,rowspan: '2'},
+            {width: '7%', field: 'company', title: '管理公司',  rowspan: '2'},
+            {width: '8%', field: 'fibre', title: '接通光纤数',  rowspan: '2', totalRow: true},
+            {width: '8%', field: 'cameraBrand', title: '摄像头品牌',  rowspan: '2'},
+            {align: 'center', title: '摄像头数', colspan: '3'},
+            {width: '12%', field: 'explain', title: '备注', rowspan: '2'},
+            {width: '9%', align: 'center', field: 'isInSystem', title: '是否接入系统', rowspan: '2', sort: true},
+            {width: '12%', field: 'reason', title: '未接入原因', rowspan: '2'},
+            {width: '8%', field: 'LEDNumber', title: '语音播报屏数', rowspan: '2', totalRow: true},
+            {width: '8%', field: 'daozhaBrand', title: '道闸品牌', rowspan: '2'},
+            {width: '8%', field: 'daozhaNumber', title: '道闸数', rowspan: '2', totalRow: true},
+            {width: '8%', field: 'stationNumber', title: '岗亭数', rowspan: '2', totalRow: true},
+            {width: '8%', field: 'computerNumber', title: '收费电脑数', rowspan: '2', totalRow: true},
+            {width: '8%', field: 'jiankongNumber', title: '监控探头数', rowspan: '2', totalRow: true},
+            ],
+            [
+            {width: '6%', field: 'wentongcameraNumber', title: '文通', totalRow: true},
+            {width: '6%', field: 'jieshuncameraNumber', title: '捷顺', totalRow: true},
+            {width: '6%', field: 'ketuocameraNumber', title: '科拓', totalRow: true},
+            ]],
+        page: true,
+        url: "{% url 'getmyparktable' %}",
+    });
+
+//table1监听工具条
+    table.on('toolbar(table1)', function(obj){
+        var checkStatus = table.checkStatus(obj.config.id); //获取选中行状态
+        if(checkStatus.data.length == 0){
+            layer.msg("请先选中一行！",{icon:2});
+            return false;
+        }
+
+        var data = checkStatus.data[0];  //获取选中行数据
+        var index = layer.load(2,{shade:0.3});
+        if(obj.event === 'edit'){
+            $.get("{% url 'editpark' %}",data, function(data){
+                layer.close(index);
+                layer.open({
+                    type: 1,
+                    title: '编辑停车场：',
+                    content: data,
+                    area: ['400px', '600px'],
+                });
+            });
+        }
+        else{
+            $.post("{% url 'deletepark' %}",data,function(){
+                layer.close(index);
+                layer.msg("处理成功！",{icon:1});
+                location.reload();
+            });
+        };
+    });
+
+
+    //点击新增停车场按钮
+    function OnAddParkButtonClick(){
+        $.get("{% url 'addpark' %}",function(data){
+            layer.open({
+                type: 1,
+                title: '新增停车场：',
+                content: data,
+                area: ['400px', '570px'],
+            });
+        });
+    }
+</script>

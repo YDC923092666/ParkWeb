@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="bread">
+                <span class="layui-breadcrumb" lay-separator="-">
+                    <a class="text" href="{% url 'index' %}">首页</a>
+                    <a class="text"><cite>我的审核</cite></a>
+                </span>
+            </div>
+
+            <hr class="layui-bg-gray">
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <fieldset class="layui-elem-field">
+                <legend>待审核泊位信息</legend>
+                <div class="layui-field-box">
+                    <table class="layui-table" id="table1" lay-filter="table1">
+                    </table>
+                    <script type="text/html" id="Toolbar">
+                        <a class="layui-btn layui-btn-xs" lay-event="pass">审核通过</a>
+                        <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="nopass">审核不通过</a>
+                    </script>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-md8">
+            <fieldset class="layui-elem-field">
+                <legend>待审核收费员信息</legend>
+                <div class="layui-field-box">
+                    <table class="layui-table" id="table2" lay-filter="table2">
+                    </table>
+                    <script type="text/html" id="table2Toolbar">
+                        <a class="layui-btn layui-btn-xs" lay-event="pass">审核通过</a>
+                        <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="nopass">审核不通过</a>
+                    </script>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!--<div class="layui-row">-->
+        <!--<div class="layui-col-md12">-->
+            <!--<fieldset class="layui-elem-field">-->
+                <!--<legend>待审核停车场信息</legend>-->
+                <!--<div class="layui-field-box">-->
+                    <!--<table class="layui-table" id="table3" lay-filter="table3">-->
+                    <!--</table>-->
+                    <!--<script type="text/html" id="table3Toolbar">-->
+                        <!--<a class="layui-btn layui-btn-xs" lay-event="pass">审核通过</a>-->
+                        <!--<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="nopass">审核不通过</a>-->
+                    <!--</script>-->
+                <!--</div>-->
+            <!--</fieldset>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<!-- END MAIN -->
+{% endblock %}
+
+{% block js %}
+    {% include 'js/js_myreview.html' %}
+{% endblock %}

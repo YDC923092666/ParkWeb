@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="bread">
+                <span class="layui-breadcrumb" lay-separator="-">
+                    <a class="text" href="{% url 'index' %}">首页</a>
+                    <a class="text"><cite>我的片区</cite></a>
+                    <a class="text"><cite>泊位信息管理</cite></a>
+                </span>
+            </div>
+
+            <hr class="layui-bg-gray">
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-md8">
+            <fieldset class="layui-elem-field">
+                <legend>编辑泊位信息</legend>
+                <div class="layui-field-box">
+                    <blockquote class="layui-elem-quote">你当前修改的是【{{ area }}】</blockquote>
+                    <form class="layui-form layui-form-pane" action="">
+                        <fieldset class="layui-elem-field layui-field-title">
+                            <legend>占道泊位数</legend>
+                        </fieldset>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:150px">一类区 总泊位数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="class1" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.class1 }}">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:150px">一类区 在管泊位数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="controlclass1" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.controlclass1 }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:150px">二类区 总泊位数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="class2" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.class2 }}">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:150px">二类区 在管泊位数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="controlclass2" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.controlclass2 }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:150px">三类区 总泊位数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="class3" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.class3 }}">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:150px">三类区 在管泊位数</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="controlclass3" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.controlclass3 }}">
+                                </div>
+                            </div>
+                        </div>
+                        <fieldset class="layui-elem-field layui-field-title">
+                            <legend>停车场泊位数</legend>
+                        </fieldset>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">停车场</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="parkinglotnumber" placeholder="若无则不填写" autocomplete="off" class="layui-input" value="{{ data.parkingLotNumber }}">
+                            </div>
+                        </div>
+                        <fieldset class="layui-elem-field layui-field-title">
+                            <legend>地磁数</legend>
+                        </fieldset>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">一类区</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="diciInclass1" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.diciInclass1 }}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">二类区</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="diciInclass2" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.diciInclass2 }}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">三类区</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="diciInclass3" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.diciInclass3 }}">
+                            </div>
+                        </div>
+                        <button class="layui-btn" lay-submit lay-filter="myarea">提交审核</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </form>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<!-- END MAIN -->
+{% endblock %}
+
+{% block js %}
+    {% include 'js/js_myarea.html' %}
+{% endblock %}

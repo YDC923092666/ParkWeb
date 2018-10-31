@@ -1,0 +1,138 @@
+<script>
+<!--待审核列表1-->
+    table.render({
+        elem: '#table1', //指定原始表格元素选择器（推荐id选择器）
+        cols:  [[ //标题栏
+            {field: 'id', title: 'ID',width: '3%', rowspan: '3'},
+            {field: 'area__name', title: '片区',width: '7%', rowspan: '3'},
+            {align: 'center', title: '占道泊位数',colspan: "6"},
+            {align: 'center', title: '地磁数', colspan: "3",},
+            {field: 'parkingLotNumber', title: '停车场泊位',width: '7%', rowspan: '3'},
+            {field: 'createUser__username', title: '创建用户',width: '10%', rowspan: '3'},
+            {field: 'createTime', title: '创建时间',width: '13%', rowspan: '3'},
+            {fixed: 'right', title: '操作',width:'17%', align:'center', toolbar: '#Toolbar', rowspan: '3'}
+            ],
+            [
+            {align: 'center', title: '一类区', colspan: "2"},
+            {align: 'center', title: '二类区', colspan: "2"},
+            {align: 'center', title: '三类区', colspan: "2"},
+            {field: 'diciInclass1', title: '一类区', rowspan: '2'},
+            {field: 'diciInclass2', title: '二类区', rowspan: '2'},
+            {field: 'diciInclass3', title: '三类区', rowspan: '2'},
+            ],
+            [
+            {field: 'class1', title: '总数',colspan: "1"},
+            {field: 'controlclass1', title: '在管',colspan: "1"},
+            {field: 'class2', title: '总数',colspan: "1"},
+            {field: 'controlclass2', title: '在管',colspan: "1"},
+            {field: 'class3', title: '总数',colspan: "1"},
+            {field: 'controlclass3', title: '在管',colspan: "1"},
+
+            ]],
+        url: "{% url 'GetBerthTable' %}",
+    });
+
+    //table1监听工具条
+    table.on('tool(table1)', function(obj){
+        var data = obj.data;
+        if(obj.event === 'pass'){
+            var index = layer.load(2,{shade:0.3});
+            $.post("{% url 'pass' %}",data,function(){
+                layer.close(index);
+                layer.msg("处理成功！",{icon:1});
+                location.reload();
+            });
+        }
+        else if(obj.event === 'nopass')
+        {
+            var index = layer.load(2,{shade:0.3});
+            $.post("{% url 'nopass' %}",data,function(){
+                layer.close(index);
+                layer.msg("处理成功！",{icon:1});
+                location.reload();
+            });
+        }
+    });
+
+    table.render({
+        elem: '#table2', //指定原始表格元素选择器（推荐id选择器）
+        cols:  [[ //标题栏
+            {field: 'id', title: 'ID',width: '5%', rowspan: '2'},
+            {field: 'area__name', title: '片区',width: '10%', rowspan: '2'},
+            {align: 'center', title: '收费员数',colspan: "3"},
+            {field: 'createUser__username', title: '创建用户',width: '15%', rowspan: '2'},
+            {field: 'createTime', title: '创建时间',width: '20%', rowspan: '2'},
+            {fixed: 'right', title: '操作',width:'20%', align:'center', toolbar: '#table2Toolbar', rowspan: '2'}
+            ],
+            [
+            {align: 'center', field: 'maninclass1', title: '一类区'},
+            {align: 'center', field: 'maninclass2', title: '二类区'},
+            {align: 'center', field: 'maninclass3', title: '三类区'},
+            ]],
+        url: "{% url 'getmantable' %}",
+    });
+
+    table.render({
+        elem: '#table3', //指定原始表格元素选择器（推荐id选择器）
+        cols:  [[ //标题栏
+            {field: 'id', title: 'ID',width: '3%', rowspan: '2'},
+            {align: 'center', field: 'name', title: '停车场名',width: '10%', rowspan: '2'},
+            {field: 'berthNumber', title: '泊位数', rowspan: '2'},
+            {align: 'center', title: '进出口', colspan: '3'},
+            {field: 'cameraNumber', title: '摄像头数', rowspan: '2'},
+            {field: 'isInSystem', title: '是否接入系统', width:'8%', rowspan: '2'},
+            {align: 'center',field: 'reason', title: '未接入原因',width:'30%', rowspan: '2'},
+            {field: 'area__name', title: '所属片区', rowspan: '2', sort: true},
+            {fixed: 'right', title: '操作',width:'15%', align:'center', toolbar: '#Toolbar', rowspan: '2'}
+            ],
+            [
+            {field: 'inCount', title: '进口数', totalRow: true},
+            {field: 'outCount', title: '出口数', totalRow: true},
+            ]],
+        url: "{% url 'getparktable' %}",
+    });
+
+    //table2监听工具条
+    table.on('tool(table2)', function(obj){
+        var data = obj.data;
+        if(obj.event === 'pass'){
+            var index = layer.load(2,{shade:0.3});
+            $.post("{% url 'myareashoufeiyuanpass' %}",data,function(){
+                layer.close(index);
+                layer.msg("处理成功！",{icon:1});
+                location.reload();
+            });
+        }
+        else if(obj.event === 'nopass')
+        {
+            var index = layer.load(2,{shade:0.3});
+            $.post("{% url 'myareashoufeiyuannopass' %}",data,function(){
+                layer.close(index);
+                layer.msg("处理成功！",{icon:1});
+                location.reload();
+            });
+        }
+    });
+
+    //table3监听工具条
+    table.on('tool(table3)', function(obj){
+        var data = obj.data;
+        if(obj.event === 'pass'){
+            var index = layer.load(2,{shade:0.3});
+            $.post("{% url 'myareaparkpass' %}",data,function(){
+                layer.close(index);
+                layer.msg("处理成功！",{icon:1});
+                location.reload();
+            });
+        }
+        else if(obj.event === 'nopass')
+        {
+            var index = layer.load(2,{shade:0.3});
+            $.post("{% url 'myareaparknopass' %}",data,function(){
+                layer.close(index);
+                layer.msg("处理成功！",{icon:1});
+                location.reload();
+            });
+        }
+    });
+</script>

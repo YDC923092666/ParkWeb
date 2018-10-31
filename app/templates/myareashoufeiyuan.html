@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="bread">
+                <span class="layui-breadcrumb" lay-separator="-">
+                    <a class="text" href="{% url 'index' %}">首页</a>
+                    <a class="text"><cite>我的片区</cite></a>
+                    <a class="text"><cite>收费员管理</cite></a>
+                </span>
+            </div>
+
+            <hr class="layui-bg-gray">
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-md8">
+            <fieldset class="layui-elem-field">
+                <legend>编辑收费员信息</legend>
+                <div class="layui-field-box">
+                    <blockquote class="layui-elem-quote">你当前修改的是【{{ area }}】</blockquote>
+                    <form class="layui-form layui-form-pane" action="">
+                        <fieldset class="layui-elem-field layui-field-title">
+                            <legend>收费员数</legend>
+                        </fieldset>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">一类区</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="maninclass1" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.maninclass1 }}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">二类区</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="maninclass2" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.maninclass2 }}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">三类区</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="maninclass3" lay-verify="required|number" autocomplete="off" class="layui-input" value="{{ data.maninclass3 }}">
+                            </div>
+                        </div>
+                        <button class="layui-btn" lay-submit lay-filter="myareashoufeiyuan">提交审核</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </form>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<!-- END MAIN -->
+{% endblock %}
+
+{% block js %}
+    {% include 'js/js_myareashoufeiyuan.html' %}
+{% endblock %}

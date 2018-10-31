@@ -1,0 +1,162 @@
+<hr class="layui-bg-gray">
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <form class="layui-form layui-form-pane" action="" lay-filter="table">
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">ID</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="id" disabled class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">停车场名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="name" lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">管理公司</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="company" lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">接通光纤数量</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="fibre" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">摄像头品牌</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="cameraBrand" lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">文通摄像头数</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="wentongcameraNumber" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">捷顺摄像头数</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="jieshuncameraNumber" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">科拓摄像头数</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="ketuocameraNumber" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">备注</label>
+                    <div class="layui-input-inline">
+                        <textarea name="explain" placeholder="若无备注信息则不填写" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">是否接入系统</label>
+                        <input type="radio" name="isInSystem" value="True" title="已接入" checked>
+                        <input type="radio" name="isInSystem" value="False" title="未接入">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">未接入原因</label>
+                    <div class="layui-input-inline">
+                        <textarea name="reason" placeholder="若已接入系统则不填写" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">语音播报屏数</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="LEDNumber" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">道闸品牌</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="daozhaBrand" lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">道闸数</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="daozhaNumber" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">岗亭数</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="stationNumber" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">收费电脑数</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="computerNumber" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:120px">监控探头数</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="jiankongNumber" lay-verify="required|number" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div style="text-align: right;">
+                    <button class="layui-btn" lay-submit lay-filter="confirmeditpark">确认修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    form.render();
+
+    <!--初始赋值-->
+    form.val("table", {
+    "id": "{{ data.id }}",
+    "name": "{{ data.name }}",
+    "company": "{{ data.company }}",
+    "fibre": "{{ data.fibre }}",
+    "cameraBrand": "{{ data.cameraBrand }}",
+    "wentongcameraNumber": "{{ data.wentongcameraNumber }}",
+    "jieshuncameraNumber": "{{ data.jieshuncameraNumber }}",
+    "ketuocameraNumber": "{{ data.ketuocameraNumber }}",
+    "isInSystem": "{{ data.isInSystem }}",
+    "reason": "{{ data.reason }}",
+    "LEDNumber": "{{ data.LEDNumber }}",
+    "daozhaNumber": "{{ data.daozhaNumber }}",
+    "daozhaBrand": "{{ data.daozhaBrand }}",
+    "stationNumber": "{{ data.stationNumber }}",
+    "computerNumber": "{{ data.computerNumber }}",
+    "jiankongNumber": "{{ data.jiankongNumber }}",
+    "stationNumber": "{{ data.stationNumber }}",
+    })
+
+    form.on('submit(confirmeditpark)', function(data){
+        var index = layer.load(2,{shade:0.3});
+        $.ajax({
+			type: "POST",
+			url: "{% url 'editpark' %}",
+			data: data.field,
+            success:function (data) {
+			    var result = data['result'];
+                if (result == 'success'){
+                    layer.close(index);
+                    layer.msg('修改成功！',{icon:1,time: 3000}, function(){
+                        location.reload();
+                    });
+                }
+                else {
+                    layer.close(index);
+                    layer.msg('修改失败！请检查数据格式！',{icon:2});
+                }
+            }
+		});
+        return false;
+    });
+</script>

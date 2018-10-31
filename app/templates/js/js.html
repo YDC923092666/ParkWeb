@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<script>
+    var table = layui.table;
+    var laypage = layui.laypage;
+    var form = layui.form;
+    var $ = layui.$;
+    var layer = layui.layer;
+
+    <!--图片懒加载-->
+    var flow = layui.flow;
+    flow.lazyimg();
+
+    layer.config({
+        skin: 'layui-layer-molv',//默认皮肤
+        shade: 0.3
+    });
+
+    $.ajaxSetup({
+        data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+    });
+
+    <!--修改密码-->
+    function OnChangePasswordButtonClick(){
+        var index = layer.load(2,{shade:0.3});
+        $.get("{% url 'changepassword' %}",function(data){
+            layer.close(index);
+            layer.open({
+                type: 1,
+                title: '修改密码：',
+                content: data,
+                area: ['400px', '220px'],
+            });
+        });
+    }
+</script>

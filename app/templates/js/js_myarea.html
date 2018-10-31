@@ -1,0 +1,23 @@
+<script>
+    form.on('submit(myarea)', function(data){
+        var index = layer.load(2,{shade:0.3});
+        $.ajax({
+			type: "POST",
+			url: "{% url 'myarea' %}",
+			data: data.field,
+            success:function (data) {
+			    console.log(data);
+			    var result = data['result'];
+                if (result == 'success'){
+                    layer.close(index);
+                    layer.msg('提交成功！请耐心等待审核！',{icon:1,time: 5000});
+                }
+                else {
+                    layer.close(index);
+                    layer.msg('提交错误！请检查数据格式！',{icon:2});
+                }
+            }
+		});
+        return false;
+    });
+</script>

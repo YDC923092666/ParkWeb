@@ -1,0 +1,22 @@
+<table class="layui-table" lay-filter="test">
+    <thead>
+        <tr>
+            <th>片区</th>
+            <th>创建用户</th>
+            <th>创建时间</th>
+            <th>审核用户</th>
+            <th>审核时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for field in data %}
+        <tr>
+            <td>{{ field.area__name }}</td>
+            <td>{{ field.createUser__username }}</td>
+            <td>{{ field.createTime|date:'Y-m-d' }}</td>
+            <td>{{ field.passUser__username }}</td>
+            <td>{{ field.passTime|date:'Y-m-d' }}</td>
+        </tr>
+        {% endfor %}
+  </tbody>
+</table>

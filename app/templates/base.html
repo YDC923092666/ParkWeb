@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>报表平台</title>
+    <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+</head>
+
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">报表平台</div>
+        <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <i class="layui-icon">&#xe612;</i> {{ request.user }}
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a onclick="OnChangePasswordButtonClick()">修改密码</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="{% url 'logout' %}">退出</a></li>
+    </ul>
+    </div>
+
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item">
+                    <a class="" href="{% url 'index' %}">数据总览</a>
+                </li>
+                {% if 'app.can_edit' in request.user.get_group_permissions %}
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:">我的片区</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{% url 'myarea' %}">泊位管理</a></dd>
+                        <dd><a href="{% url 'myshoufeiyuan' %}">收费员管理</a></dd>
+                    </dl>
+                </li>
+                {% endif %}
+                {% if 'app.can_edit_park' in request.user.get_group_permissions %}
+                <li class="layui-nav-item">
+                    <a class="" href="{% url 'mypark' %}">停车场管理</a>
+                </li>
+                {% endif %}
+                {% if 'app.can_review' in request.user.get_group_permissions %}
+                <li class="layui-nav-item">
+                    <a class="" href="{% url 'myreview' %}">我的审核</a>
+                </li>
+                {% endif %}
+                {% if request.user.is_superuser %}
+                <li class="layui-nav-item">
+                    <a class="" href="/admin" target="_blank">后台管理</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        {% block main %}
+
+        {% endblock %}
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © 报表平台
+    </div>
+</div>
+
+    <script src="{% static 'layui/layui.all.js' %}"></script>
+    {% include "js/js.html" %}
+    {% block js %}
+
+    {% endblock %}
+</body>
+</html>

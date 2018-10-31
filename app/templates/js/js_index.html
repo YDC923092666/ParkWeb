@@ -1,0 +1,172 @@
+<script>
+<!--table1-->
+    table.render({
+        elem: '#table1', //指定原始表格元素选择器（推荐id选择器）
+        totalRow: true,
+        cols:  [[ //标题栏
+            {align: 'center',field: 'area__name', title: '片区',width: '14%', totalRowText: '合计', rowspan: '2'},
+            {align: 'center',title: '一类区', colspan: "3"},
+            {align: 'center',title: '二类区', colspan: "3"},
+            {align: 'center',title: '三类区', colspan: "3"},
+            <!--{field: 'inRoadTotalNumber', title: '总泊位', totalRow: true, rowspan: '2'},-->
+            {fixed: 'right', title: '操作',width:'8%', align:'center', toolbar: '#Toolbar', rowspan: '2'}
+            ],
+            [
+            {field: 'controlclass1', title: '在管', totalRow: true},
+            {field: 'remainclass1', title: '未管', totalRow: true},
+            {field: 'class1', title: '总数', totalRow: true},
+            {field: 'controlclass2', title: '在管', totalRow: true},
+            {field: 'remainclass2', title: '未管', totalRow: true},
+            {field: 'class2', title: '总数', totalRow: true},
+            {field: 'controlclass3', title: '在管', totalRow: true},
+            {field: 'remainclass3', title: '未管', totalRow: true},
+            {field: 'class3', title: '总数', totalRow: true},
+            ]],
+        url: "{% url 'getindextable1' %}",
+    });
+
+    <!--table2-->
+    table.render({
+        elem: '#table2', //指定原始表格元素选择器（推荐id选择器）
+        totalRow: true,
+        cols:  [[ //标题栏
+            {align: 'center', field: 'area__name', title: '片区',width: '21%', totalRowText: '合计', rowspan: '2'},
+            {align: 'center', title: '占道泊位',width: '58%', totalRow: true, colspan: "3"},
+            {field: 'parkingLotNumber', title: '停车场泊位数',width: '22%', totalRow: true, rowspan: '2'},
+            ],
+            [
+            {field: 'controlTotalNumber', title: '在管泊位', totalRow: true},
+            {field: 'remainTotalNumber', title: '未管泊位', totalRow: true},
+            {field: 'inRoadTotalNumber', title: '总泊位', totalRow: true},
+            ]],
+        url: "{% url 'getindextable2' %}",
+    });
+
+    <!--table3-->
+    table.render({
+        elem: '#table3', //指定原始表格元素选择器（推荐id选择器）
+        totalRow: true,
+        cols:  [[ //标题栏
+            {align: 'center', field: 'area__name', title: '片区',width: '20%', totalRowText: '合计'},
+            {field: 'diciInclass1', title: '一类区', totalRow: true},
+            {field: 'diciInclass2', title: '二类区', totalRow: true},
+            {field: 'diciInclass3', title: '三类区', totalRow: true},
+            {field: 'diciTotalNumber', title: '总数', totalRow: true},
+            {fixed: 'right', title: '操作',width:'14%', align:'center', toolbar: '#Toolbar'}
+            ]],
+        url: "{% url 'getindextable3' %}",
+    });
+
+    <!--table4-->
+    table.render({
+        elem: '#table4', //指定原始表格元素选择器（推荐id选择器）
+        totalRow: true,
+        cols:  [[ //标题栏
+            {field: 'type', title: '类型',width: '40%', totalRowText: '合计'},
+            {field: 'allcount', title: '泊位数',width: '61%', totalRow: true},
+            ]],
+        url: "{% url 'getindextable4' %}",
+    });
+
+    <!--table5-->
+    table.render({
+        elem: '#table5', //指定原始表格元素选择器（推荐id选择器）
+        totalRow: true,
+        cols:  [[ //标题栏
+            {align: 'center', field: 'area__name', title: '片区',width: '20%', totalRowText: '合计'},
+            {field: 'maninclass1', title: '一类区', totalRow: true},
+            {field: 'maninclass2', title: '二类区', totalRow: true},
+            {field: 'maninclass3', title: '三类区', totalRow: true},
+            {field: 'manTotalNumber', title: '总数', totalRow: true},
+            {fixed: 'right', title: '操作',width:'14%', align:'center', toolbar: '#Toolbar'}
+            ]],
+        url: "{% url 'getindextable5' %}",
+    });
+
+    <!--table6-->
+    table.render({
+        elem: '#table6', //指定原始表格元素选择器（推荐id选择器）
+        totalRow: true,
+        width: '1673',
+        cols:  [[ //标题栏
+            {width: '7%', align: 'center', field: 'name', title: '停车场名', totalRowText: '合计' ,rowspan: '2'},
+            {width: '7%', field: 'company', title: '管理公司',  rowspan: '2', sort: true},
+            {width: '8%', field: 'fibre', title: '接通光纤数',  rowspan: '2', totalRow: true},
+            {width: '8%', field: 'cameraBrand', title: '摄像头品牌',  rowspan: '2'},
+            {align: 'center', title: '摄像头数', colspan: '3'},
+            {width: '12%', field: 'explain', title: '备注', rowspan: '2'},
+            {width: '9%', align: 'center', field: 'isInSystem', title: '是否接入系统', rowspan: '2', sort: true},
+            {width: '12%', field: 'reason', title: '未接入原因', rowspan: '2'},
+            {width: '8%', field: 'LEDNumber', title: '语音播报屏数', rowspan: '2', totalRow: true},
+            {width: '8%', field: 'daozhaBrand', title: '道闸品牌', rowspan: '2'},
+            {width: '8%', field: 'daozhaNumber', title: '道闸数', rowspan: '2', totalRow: true},
+            {width: '8%', field: 'stationNumber', title: '岗亭数', rowspan: '2', totalRow: true},
+            {width: '8%', field: 'computerNumber', title: '收费电脑数', rowspan: '2', totalRow: true},
+            {width: '8%', field: 'jiankongNumber', title: '监控探头数', rowspan: '2', totalRow: true},
+            ],
+            [
+            {width: '6%', field: 'wentongcameraNumber', title: '文通', totalRow: true},
+            {width: '6%', field: 'jieshuncameraNumber', title: '捷顺', totalRow: true},
+            {width: '6%', field: 'ketuocameraNumber', title: '科拓', totalRow: true},
+            ]],
+        url: "{% url 'getindextable6' %}",
+    });
+
+    //监听工具条
+    table.on('tool(table1)', function(obj){
+        var data = obj.data;
+        if(obj.event === 'detail'){
+            $.get("{% url 'gettable1detailinfo' %}",data,function(data){
+                layer.open({
+                    type: 1,
+                    title: '详情：',
+                    content: data,
+                    area: ['700px', '200px'],
+                    btn: '关闭',
+                });
+            });
+        }
+    });
+
+    //监听工具条
+    table.on('tool(table3)', function(obj){
+        var data = obj.data;
+        if(obj.event === 'detail'){
+            $.get("{% url 'gettable3detailinfo' %}",data,function(data){
+            console.log(data);
+                layer.open({
+                    type: 1,
+                    title: '详情：',
+                    content: data,
+                    area: ['700px', '200px'],
+                    btn: '关闭',
+                    <!--yes: function (index, layero) {-->
+                        <!--location.reload();-->
+                    <!--}-->
+                });
+            });
+        }
+    });
+
+    //监听工具条
+    table.on('tool(table5)', function(obj){
+        var data = obj.data;
+        if(obj.event === 'detail'){
+            $.get("{% url 'gettable5detailinfo' %}",data,function(data){
+            console.log(data);
+                layer.open({
+                    type: 1,
+                    title: '详情：',
+                    content: data,
+                    area: ['700px', '200px'],
+                    btn: '关闭',
+                    <!--yes: function (index, layero) {-->
+                        <!--location.reload();-->
+                    <!--}-->
+                });
+            });
+        }
+    });
+
+
+</script>

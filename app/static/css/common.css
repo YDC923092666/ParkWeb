@@ -1,0 +1,31 @@
+a {
+    cursor:pointer;
+}
+
+.bread {
+    margin: 20px 20px 10px 20px;
+}
+
+.text {
+    font-size: 17px;
+}
+
+.info {
+    background-color: lightblue;
+}
+
+.warning {
+    background-color: gold;
+}
+
+.danger {
+    background-color: orange;
+}
+
+.critical {
+    background-color: orangered;
+}
+
+.disaster {
+    background-color: red;
+}

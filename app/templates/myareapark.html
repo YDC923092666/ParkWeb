@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="bread">
+                <span class="layui-breadcrumb" lay-separator="-">
+                    <a class="text" href="{% url 'index' %}">首页</a>
+                    <a class="text"><cite>停车场管理</cite></a>
+                </span>
+            </div>
+
+            <hr class="layui-bg-gray">
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <fieldset class="layui-elem-field">
+                <legend>编辑停车场信息</legend>
+                <div class="layui-field-box">
+                    <table class="layui-table" id="table1" lay-filter="table1">
+                    </table>
+
+                    <script type="text/html" id="toolbarDemo">
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-sm layui-btn-normal" lay-event="edit">修改</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="delete">删除</button>
+                    </div>
+                    </script>
+                    <button class="layui-btn" onclick="OnAddParkButtonClick()">新增停车场</button>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+<!-- END MAIN -->
+{% endblock %}
+
+{% block js %}
+    {% include 'js/js_myareapark.html' %}
+{% endblock %}
