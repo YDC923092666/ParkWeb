@@ -154,8 +154,15 @@ def GetIndexTable5(request):
 @login_required()
 def GetIndexTable6(request):
     if request.method == 'GET':
-        li = list(Park.objects.all().values())
-        count = len(li)
+        page = int(request.GET.get('page'))
+        limit = int(request.GET.get('limit'))
+        start = (page - 1) * limit - 1
+        if start < 0:
+            start = 0
+        end = page * limit
+        li = list(Park.objects.all().values()[start:end])
+        all_li = Park.objects.all()
+        count = len(all_li)
         data = {
             'code': 0,
             'msg': "",
@@ -465,8 +472,15 @@ def MyAreaPark(request):
 @login_required()
 def MyAreaGetParkTable(request):
     if request.method == 'GET':
-        li = list(Park.objects.all().values().order_by('id'))
-        count = len(li)
+        page = int(request.GET.get('page'))
+        limit = int(request.GET.get('limit'))
+        start = (page - 1) * limit - 1
+        if start < 0:
+            start = 0
+        end = page * limit
+        li = list(Park.objects.all().values().order_by('id')[start:end])
+        all_li = Park.objects.all()
+        count = len(all_li)
         data = {
             'code': 0,
             'msg': "",

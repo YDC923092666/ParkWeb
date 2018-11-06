@@ -89,7 +89,7 @@
         totalRow: true,
         width: '1673',
         cols:  [[ //标题栏
-            {width: '7%', align: 'center', field: 'name', title: '停车场名', totalRowText: '合计' ,rowspan: '2'},
+            {width: '9%', align: 'center', field: 'name', title: '停车场名', totalRowText: '合计' ,rowspan: '2'},
             {width: '7%', field: 'company', title: '管理公司',  rowspan: '2', sort: true},
             {width: '8%', field: 'fibre', title: '接通光纤数',  rowspan: '2', totalRow: true},
             {width: '8%', field: 'cameraBrand', title: '摄像头品牌',  rowspan: '2'},
@@ -109,6 +109,7 @@
             {width: '6%', field: 'jieshuncameraNumber', title: '捷顺', totalRow: true},
             {width: '6%', field: 'ketuocameraNumber', title: '科拓', totalRow: true},
             ]],
+        page: {elem: 'fenye6'},
         url: "{% url 'getindextable6' %}",
     });
 
