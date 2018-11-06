@@ -125,4 +125,5 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = "/home/yangdongcheng/parkingweb/app/static"
+STATIC_URL = '/static/'
+STATIC_ROOT = "/home/yangdongcheng/parkingweb/app/static"
