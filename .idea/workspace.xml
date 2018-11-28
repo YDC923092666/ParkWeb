@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51ffcd9c-2685-497f-81d2-b0cd7d80456a" name="Default" comment="修改setting文件">
+    <list default="true" id="51ffcd9c-2685-497f-81d2-b0cd7d80456a" name="Default" comment="修改“备注”位置">
+      <change afterPath="$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/myhardware_pos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/myhardware_pos_editmodal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/myhardware_sim.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/js/js_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/js/js_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/js/js_myareapark.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/js/js_myareapark.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <list id="82be2510-75fd-49a5-8fb8-cf74197695fe" name="ignore" comment="ignore">
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
@@ -19,57 +23,61 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/parkingweb$manage__1_.coverage" NAME="manage (1) Coverage Results" MODIFIED="1541476657305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/parkingweb$manage__1_.coverage" NAME="manage (1) Coverage Results" MODIFIED="1543393087919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1452224619">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="56" />
-          <entry key="py" value="59" />
-          <entry key="txt" value="57" />
+          <entry key="html" value="1214" />
+          <entry key="py" value="1763" />
+          <entry key="txt" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="56" />
-          <entry key="PLAIN_TEXT" value="57" />
-          <entry key="Python" value="59" />
+          <entry key="HTML" value="1214" />
+          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="Python" value="1763" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="4" />
+          <entry key="html" value="24" />
           <entry key="md" value="1" />
-          <entry key="py" value="4" />
+          <entry key="py" value="6" />
+          <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="24" />
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="6" />
+          <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="483" column="16" lean-forward="true" selection-start-line="483" selection-start-column="16" selection-end-line="483" selection-end-column="16" />
+            <state relative-caret-position="237">
+              <caret line="849" column="85" selection-start-line="849" selection-start-column="85" selection-end-line="849" selection-end-column="85" />
               <folding>
+                <element signature="e#0#58#0" expanded="true" />
                 <element signature="e#628#1290#0" />
                 <element signature="e#665#1157#0" />
                 <element signature="e#736#1078#0" />
@@ -98,86 +106,19 @@
                 <element signature="e#4616#5062#0" />
                 <element signature="e#4652#5062#0" />
                 <element signature="e#4920#5028#0" />
-                <element signature="e#5429#5747#0" />
-                <element signature="e#5465#5747#0" />
-                <element signature="e#5805#6123#0" />
-                <element signature="e#5841#6123#0" />
-                <element signature="e#6181#6515#0" />
-                <element signature="e#6217#6515#0" />
-                <element signature="e#11026#13485#0" />
+                <element signature="e#19202#21315#0" />
+                <element signature="e#21716#22248#0" />
+                <element signature="e#22292#23574#0" />
+                <element signature="e#23661#25774#0" />
+                <element signature="e#25831#25973#0" />
+                <element signature="e#25398#25638#0" />
+                <element signature="e#26839#27175#0" />
+                <element signature="e#27338#27778#0" />
+                <element signature="e#27782#27873#0" />
+                <element signature="e#29309#30593#0" />
+                <element signature="e#30649#32156#0" />
+                <element signature="e#31474#31762#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/templates/js/js_myareapark.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/myareapark_addmodal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="102" column="85" selection-start-line="102" selection-start-column="85" selection-end-line="102" selection-end-column="85" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#9;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#10;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#11;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#12;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#13;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#14;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#15;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="10" column="72" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="82" column="35" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/js/js_index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="112" column="20" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -185,13 +126,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="350">
+              <caret line="221" column="13" selection-start-line="221" selection-start-column="4" selection-end-line="221" selection-end-column="13" />
               <folding>
-                <element signature="e#77#363#0" />
-                <element signature="e#405#1305#0" />
-                <element signature="e#1350#2779#0" />
+                <element signature="e#100#386#0" />
+                <element signature="e#428#1328#0" />
+                <element signature="e#1373#2802#0" />
+                <element signature="e#2839#3089#0" />
+                <element signature="e#3134#3914#0" />
+                <element signature="e#3952#5195#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_sim.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="61">
+              <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/myhardware_sim.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="69" column="94" selection-start-line="69" selection-start-column="85" selection-end-line="69" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="50" column="84" selection-start-line="50" selection-start-column="74" selection-end-line="50" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -226,7 +197,6 @@
         <option value="$PROJECT_DIR$/mysite/app/views.py" />
         <option value="$PROJECT_DIR$/mysite/mysite/__init__.py" />
         <option value="$PROJECT_DIR$/app/templates/js/myreview.html" />
-        <option value="$PROJECT_DIR$/app/admin.py" />
         <option value="$PROJECT_DIR$/app/templates/addnewgamemodal.html" />
         <option value="$PROJECT_DIR$/app/templates/index_showdetailinfo.html" />
         <option value="$PROJECT_DIR$/app/templates/js/shoufeiyuan.html" />
@@ -242,21 +212,30 @@
         <option value="$PROJECT_DIR$/app/templates/myareaaddpark_modal.html" />
         <option value="$PROJECT_DIR$/app/templates/myarea.html" />
         <option value="$PROJECT_DIR$/app/templates/js/js_myreview.html" />
-        <option value="$PROJECT_DIR$/app/templates/myareapark_editmodal.html" />
         <option value="$PROJECT_DIR$/app/templates/myareapark.html" />
         <option value="$PROJECT_DIR$/app/templates/myreview.html" />
         <option value="$PROJECT_DIR$/django_socket.ini" />
-        <option value="$PROJECT_DIR$/mysite/urls.py" />
-        <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/templates/changepassword.html" />
         <option value="$PROJECT_DIR$/app/templates/js/js.html" />
-        <option value="$PROJECT_DIR$/app/templates/myareapark_addmodal.html" />
-        <option value="$PROJECT_DIR$/app/models.py" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/app/templates/index.html" />
-        <option value="$PROJECT_DIR$/app/templates/js/js_index.html" />
-        <option value="$PROJECT_DIR$/app/views.py" />
         <option value="$PROJECT_DIR$/app/templates/js/js_myareapark.html" />
+        <option value="$PROJECT_DIR$/app/templates/js/js_index.html" />
+        <option value="$PROJECT_DIR$/app/templates/myareapark_addmodal.html" />
+        <option value="$PROJECT_DIR$/app/templates/myareapark_editmodal.html" />
+        <option value="$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html" />
+        <option value="$PROJECT_DIR$/app/templates/myhardware_pos.html" />
+        <option value="$PROJECT_DIR$/app/templates/myhardware_pos_addmodal.html" />
+        <option value="$PROJECT_DIR$/app/templates/myhardware_pos_editmodal.html" />
+        <option value="$PROJECT_DIR$/app/admin.py" />
+        <option value="$PROJECT_DIR$/app/templates/base.html" />
+        <option value="$PROJECT_DIR$/app/models.py" />
+        <option value="$PROJECT_DIR$/app/templates/myhardware_sim.html" />
+        <option value="$PROJECT_DIR$/mysite/urls.py" />
+        <option value="$PROJECT_DIR$/app/templates/myhardware_sim_editmodal.html" />
+        <option value="$PROJECT_DIR$/app/templates/myhardware_sim_addmodal.html" />
+        <option value="$PROJECT_DIR$/app/templates/js/js_myhardware_sim.html" />
+        <option value="$PROJECT_DIR$/app/views.py" />
       </list>
     </option>
   </component>
@@ -265,14 +244,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/mysite/settings.py">
-      <ranges>
-        <range start1="79" end1="80" start2="79" end2="80" changelist="82be2510-75fd-49a5-8fb8-cf74197695fe" />
-        <range start1="128" end1="129" start2="128" end2="129" changelist="51ffcd9c-2685-497f-81d2-b0cd7d80456a" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -334,6 +305,10 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\PycharmProjects\parkingweb\app\templates" />
+      <recent name="C:\Users\Administrator\PycharmProjects\parkingweb\app\templates\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\PycharmProjects\parkingweb\app\templates" />
       <recent name="C:\Users\Administrator\PycharmProjects\parkingweb\mysite\app" />
@@ -525,7 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541474056750</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="修改setting文件">
+      <created>1541476775975</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1541476775975</updated>
+    </task>
+    <task id="LOCAL-00017" summary="修改“备注”位置">
+      <created>1541480533997</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1541480533997</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -542,14 +531,14 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25799572" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.3297062" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49947312" weight="0.28633407" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50052685" side_tool="true" weight="0.3297062" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" weight="0.3297062" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.3297062" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.3286334" />
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49947312" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39934713" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
@@ -581,40 +570,10 @@
     <MESSAGE value="修改static目录" />
     <MESSAGE value="修改model文件编码" />
     <MESSAGE value="修改setting文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改setting文件" />
+    <MESSAGE value="修改“备注”位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改“备注”位置" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/venv/parkingweb/Lib/site-packages/django/contrib/auth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1153">
-          <caret line="368" column="6" selection-start-line="368" selection-start-column="6" selection-end-line="368" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/js/js_gamemanage.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/js/js_server.html" />
-    <entry file="file://F:/django开发/works/works/journal/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10962">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/js/js_userlog.html" />
-    <entry file="file://$PROJECT_DIR$/app/static/layui/layui.all.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/server.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/addnewgamemodal.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/addservermodal.html" />
-    <entry file="file://$PROJECT_DIR$/app/templates/index_showdetailinfo.html" />
     <entry file="file://$PROJECT_DIR$/app/templates/gamemanage.html" />
     <entry file="file://$PROJECT_DIR$/app/static/layui/layui.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -688,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/myareapark_editmodal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="151" column="23" lean-forward="true" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/myreview.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -722,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/js/js.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
@@ -743,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/myareapark.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -760,17 +698,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="10" column="72" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="72" />
+        <state relative-caret-position="3741">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2378">
+          <caret line="82" column="35" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/js/js_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3016">
+          <caret line="104" column="72" selection-start-line="104" selection-start-column="72" selection-end-line="104" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/js/js_myareapark.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/myareapark.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="33" lean-forward="true" selection-end-line="43" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/myharaware_pos_addmodal.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/myareapark_addmodal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="102" column="85" selection-start-line="102" selection-start-column="85" selection-end-line="102" selection-end-column="85" />
+        <state relative-caret-position="390">
+          <caret line="97" column="108" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="108" />
           <folding>
             <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -779,7 +748,6 @@
             <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#9;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#10;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -792,44 +760,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/myareapark_editmodal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="116">
+          <caret line="4" column="81" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
-            <element signature="e#77#363#0" />
-            <element signature="e#405#1305#0" />
-            <element signature="e#1350#2779#0" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
-          <caret line="82" column="35" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="35" />
+          <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/js/js_index.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/myhardware_pos_addmodal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="112" column="20" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
+        <state relative-caret-position="-692">
+          <caret line="28" column="85" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="85" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#9;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#10;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#6358#7944#0" />
+            <element signature="e#7066#7692#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/myhardware_pos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="67" column="61" lean-forward="true" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="221" column="13" selection-start-line="221" selection-start-column="4" selection-end-line="221" selection-end-column="13" />
+          <folding>
+            <element signature="e#100#386#0" />
+            <element signature="e#428#1328#0" />
+            <element signature="e#1373#2802#0" />
+            <element signature="e#2839#3089#0" />
+            <element signature="e#3134#3914#0" />
+            <element signature="e#3952#5195#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="54" column="15" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="54" selection-end-column="15" />
+          <folding>
+            <element signature="e#2348#2591#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="506" selection-start-line="506" selection-end-line="507" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/myhardware_pos_editmodal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-385">
+          <caret line="101" column="83" selection-start-line="101" selection-start-column="80" selection-end-line="101" selection-end-column="83" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#9;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#10;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="50" column="84" selection-start-line="50" selection-start-column="74" selection-end-line="50" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/myhardware_sim_addmodal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1247">
+          <caret line="43" column="90" selection-start-line="43" selection-start-column="90" selection-end-line="43" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/myhardware_sim_editmodal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="130" column="7" lean-forward="true" selection-start-line="105" selection-start-column="4" selection-end-line="130" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="e#6587#7219#0" />
+            <element signature="e#7239#8831#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/myhardware_sim.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="69" column="94" selection-start-line="69" selection-start-column="85" selection-end-line="69" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_sim.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="483" column="16" lean-forward="true" selection-start-line="483" selection-start-column="16" selection-end-line="483" selection-end-column="16" />
+        <state relative-caret-position="237">
+          <caret line="849" column="85" selection-start-line="849" selection-start-column="85" selection-end-line="849" selection-end-column="85" />
           <folding>
+            <element signature="e#0#58#0" expanded="true" />
             <element signature="e#628#1290#0" />
             <element signature="e#665#1157#0" />
             <element signature="e#736#1078#0" />
@@ -858,21 +948,19 @@
             <element signature="e#4616#5062#0" />
             <element signature="e#4652#5062#0" />
             <element signature="e#4920#5028#0" />
-            <element signature="e#5429#5747#0" />
-            <element signature="e#5465#5747#0" />
-            <element signature="e#5805#6123#0" />
-            <element signature="e#5841#6123#0" />
-            <element signature="e#6181#6515#0" />
-            <element signature="e#6217#6515#0" />
-            <element signature="e#11026#13485#0" />
+            <element signature="e#19202#21315#0" />
+            <element signature="e#21716#22248#0" />
+            <element signature="e#22292#23574#0" />
+            <element signature="e#23661#25774#0" />
+            <element signature="e#25831#25973#0" />
+            <element signature="e#25398#25638#0" />
+            <element signature="e#26839#27175#0" />
+            <element signature="e#27338#27778#0" />
+            <element signature="e#27782#27873#0" />
+            <element signature="e#29309#30593#0" />
+            <element signature="e#30649#32156#0" />
+            <element signature="e#31474#31762#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/js/js_myareapark.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>

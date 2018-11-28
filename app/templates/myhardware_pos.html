@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="bread">
+                <span class="layui-breadcrumb" lay-separator="-">
+                    <a class="text" href="{% url 'index' %}">首页</a>
+                    <a class="text">硬件管理</a>
+                    <a class="text"><cite>POS</cite></a>
+                </span>
+            </div>
+
+            <hr class="layui-bg-gray">
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <fieldset class="layui-elem-field">
+                <legend>编辑POS相关信息</legend>
+                <!--搜索栏-->
+                <div class="layui-field-box">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">状态</label>
+                                <div class="layui-input-inline">
+                                    <select name="status">
+                                        <option value="">请选择一个状态</option>
+                                        <option value="城西片区">城西片区</option>
+                                        <option value="城东片区">城东片区</option>
+                                        <option value="城南片区">城南片区</option>
+                                        <option value="高新片区">高新片区</option>
+                                        <option value="游仙片区">游仙片区</option>
+                                        <option value="科创园片区">科创园片区</option>
+                                        <option value="库存中">库存中</option>
+                                        <option value="待返修">待返修</option>
+                                        <option value="返修中">返修中</option>
+                                        <option value="已遗失">已遗失</option>
+                                        <option value="已损坏">已损坏</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">领用人</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="people" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">POS机ID</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="POS_ID" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">POS机SN号</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="POS_SN" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">POS机型号</label>
+                                <div class="layui-input-inline">
+                                    <select name="POS_Model">
+                                        <option value="">请选择一个型号</option>
+                                        <option value="一代">一代</option>
+                                        <option value="二代">二代</option>
+                                        <option value="三代">三代</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="text-align: right">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="searchpos">搜索</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!--表格-->
+                    <table class="layui-table" id="table1" lay-filter="table1">
+                    </table>
+
+                    <script type="text/html" id="toolbarDemo">
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-sm layui-btn-normal" lay-event="edit">修改</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="delete">删除</button>
+                    </div>
+                    </script>
+                    <button class="layui-btn" onclick="OnAddPOSButtonClick()">新增POS相关信息</button>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+<!-- END MAIN -->
+{% endblock %}
+
+{% block js %}
+    {% include 'js/js_myhardware_pos.html' %}
+{% endblock %}

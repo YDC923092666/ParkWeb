@@ -48,6 +48,15 @@
                     <a class="" href="{% url 'mypark' %}">停车场管理</a>
                 </li>
                 {% endif %}
+                {% if 'app.can_edit_hardware' in request.user.get_group_permissions %}
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:">硬件管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{% url 'myhardwarepos' %}">POS</a></dd>
+                        <dd><a href="{% url 'myhardwaresim' %}">SIM</a></dd>
+                    </dl>
+                </li>
+                {% endif %}
                 {% if 'app.can_review' in request.user.get_group_permissions %}
                 <li class="layui-nav-item">
                     <a class="" href="{% url 'myreview' %}">我的审核</a>

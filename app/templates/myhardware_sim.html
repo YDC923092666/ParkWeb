@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <div class="bread">
+                <span class="layui-breadcrumb" lay-separator="-">
+                    <a class="text" href="{% url 'index' %}">首页</a>
+                    <a class="text">硬件管理</a>
+                    <a class="text"><cite>SIM</cite></a>
+                </span>
+            </div>
+
+            <hr class="layui-bg-gray">
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <fieldset class="layui-elem-field">
+                <legend>编辑SIM相关信息</legend>
+                <!--搜索栏-->
+                <div class="layui-field-box">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">状态</label>
+                                <div class="layui-input-inline">
+                                    <select name="status">
+                                        <option value="">请选择一个状态</option>
+                                        <option value="城西片区">城西片区</option>
+                                        <option value="城东片区">城东片区</option>
+                                        <option value="城南片区">城南片区</option>
+                                        <option value="高新片区">高新片区</option>
+                                        <option value="游仙片区">游仙片区</option>
+                                        <option value="科创园片区">科创园片区</option>
+                                        <option value="库存中">库存中</option>
+                                        <option value="无法使用">无法使用</option>
+                                        <option value="已遗失">已遗失</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">领用人</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="people" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">运营商</label>
+                                <div class="layui-input-inline">
+                                    <select name="SIM_Company">
+                                        <option value="">请选择一个运营商</option>
+                                        <option value="移动">移动</option>
+                                        <option value="联通">联通</option>
+                                        <option value="电信">电信</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">ICCID</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="SIM_ICCID" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <div class="layui-input-inline">
+                                    <button class="layui-btn" lay-submit lay-filter="searchsim">搜索</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!--表格-->
+                    <table class="layui-table" id="table1" lay-filter="table1">
+                    </table>
+
+                    <script type="text/html" id="toolbarDemo">
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-sm layui-btn-normal" lay-event="edit">修改</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="delete">删除</button>
+                    </div>
+                    </script>
+                    <button class="layui-btn" onclick="OnAddSIMButtonClick()">新增SIM卡</button>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+<!-- END MAIN -->
+{% endblock %}
+
+{% block js %}
+    {% include 'js/js_myhardware_sim.html' %}
+{% endblock %}

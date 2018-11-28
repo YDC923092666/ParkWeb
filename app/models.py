@@ -141,3 +141,93 @@ class Park(models.Model):
         permissions = (
             ('can_edit_park', '是否可以编辑停车场信息'),
         )
+
+# 硬件管理
+# POS机
+class POS(models.Model):
+    POS_Status_Choices = (
+        ('城西片区', '城西片区'),
+        ('城东片区', '城东片区'),
+        ('城南片区', '城南片区'),
+        ('高新片区', '高新片区'),
+        ('游仙片区', '游仙片区'),
+        ('科创园片区', '科创园片区'),
+        ('库存中', '库存中'),
+        ('待返修', '待返修'),
+        ('返修中', '返修中'),
+        ('已遗失', '已遗失'),
+        ('已损坏', '已损坏'),
+        ('其他', '其他'),
+    )
+    default = '库存中'
+
+    status = models.CharField(
+        max_length=10,
+        choices=POS_Status_Choices,
+        default=default,
+    )
+    people = models.CharField(max_length=20)
+    POS_Model = models.CharField(max_length=20)   # POS型号
+    POS_ID = models.CharField(max_length=50)
+    POS_SN = models.CharField(max_length=50)
+    POS_Battery = models.BooleanField(default=True)
+    POS_Charger = models.BooleanField(default=True)
+    TF = models.BooleanField(default=True)
+    printer = models.BooleanField(default=True)
+    printer_Charger = models.BooleanField(default=True)
+    remark = models.CharField(max_length=100,blank=True,null=True)
+    changeTime = models.DateTimeField(auto_now=True)
+    createUser = models.ForeignKey('auth.User', related_name="createPOSUser")
+
+    def __str__(self):
+        return self.POS_ID
+
+    class Meta:
+        verbose_name = "POS管理"
+        verbose_name_plural = verbose_name
+        permissions = (
+            ('can_edit_hardware', '是否可以编辑硬件信息'),
+        )
+
+
+# 硬件管理
+# SIM卡
+class SIM(models.Model):
+    SIM_Status_Choices = (
+        ('城西片区', '城西片区'),
+        ('城东片区', '城东片区'),
+        ('城南片区', '城南片区'),
+        ('高新片区', '高新片区'),
+        ('游仙片区', '游仙片区'),
+        ('科创园片区', '科创园片区'),
+        ('库存中', '库存中'),
+        ('无法使用', '无法使用'),
+        ('已遗失', '已遗失'),
+        ('其他', '其他'),
+    )
+    SIM_Company_Choices = (
+        ('移动', '移动'),
+        ('联通', '联通'),
+        ('电信', '电信'),
+    )
+    default = '库存中'
+
+    status = models.CharField(
+        max_length=10,
+        choices=SIM_Status_Choices,
+        default=default,
+    )
+
+    people = models.CharField(max_length=20, blank=True, null=True)
+    SIM_ICCID = models.CharField(max_length=50)
+    SIM_Company = models.CharField(max_length=10, choices=SIM_Company_Choices)
+    remark = models.CharField(max_length=100, blank=True, null=True)
+    changeTime = models.DateTimeField(auto_now=True)
+    createUser = models.ForeignKey('auth.User', related_name="createSIMUser")
+
+    def __str__(self):
+        return self.SIM_ICCID
+
+    class Meta:
+        verbose_name = "SIM管理"
+        verbose_name_plural = verbose_name

@@ -33,6 +33,25 @@ urlpatterns = [
     url(r'^mypark/editpark/$', views.MyAreaEditPark, name='editpark'),
     url(r'^mypark/deletepark/$', views.MyAreaDeletePark, name='deletepark'),
 
+    #硬件管理
+    url(r'^myhardwarepos/$', views.MyHardwarePOS, name='myhardwarepos'),
+    url(r'^getmyhardwarepostable/$', views.GetMyHardwarePosTable, name='getmyhardwarepostable'),
+    url(r'^myhardwarepos/addpos/$', views.MyHardwareAddPOS, name='addpos'),
+    url(r'^myhardwarepos/editpos/$', views.MyHardwareEditPOS, name='editpos'),
+    url(r'^myhardwarepos/deletepos/$', views.MyHardwareDeletePOS, name='deletepos'),
+    url(r'^myhardwarepos/searchpos/$', views.MyHardwareSearchPOS, name='searchpos'),
+    url(r'^myhardwarepos/checkposid/$', views.MyHardwareCheckPOSID, name='checkposid'), # 查重ID
+    url(r'^myhardwarepos/checkpossn/$', views.MyHardwareCheckPOSSN, name='checkpossn'), # 查重SN
+
+    url(r'^myhardwaresim/$', views.MyHardwareSIM, name='myhardwaresim'),
+    url(r'^getmyhardwaresimtable/$', views.GetMyHardwareSIMTable, name='getmyhardwaresimtable'),
+    url(r'^myhardwaresim/addsim/$', views.MyHardwareAddSIM, name='addsim'),
+    url(r'^myhardwaresim/editsim/$', views.MyHardwareEditSIM, name='editsim'),
+    url(r'^myhardwaresim/deletesim/$', views.MyHardwareDeleteSIM, name='deletesim'),
+    url(r'^myhardwaresim/checkiccid/$', views.MyHardwareCheckICCID, name='checkiccid'), # 查重ICCID
+
+
+
     #我的审核
     url(r'^myreview/$', views.MyReview, name='myreview'),
     url(r'^myreview/getberthtable/$', views.MyReviewGetBerthTable, name='GetBerthTable'),

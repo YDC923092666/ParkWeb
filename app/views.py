@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.contrib.auth.decorators import permission_required
 from app.forms import LoginForm
-from app.models import Berth,Area,UserInfo,ShowBerth,Shoufeiyuan, Park
+from app.models import Berth,Area,UserInfo,ShowBerth,Shoufeiyuan, Park, POS, SIM
 
 from datetime import datetime
 import json
@@ -603,4 +603,343 @@ def MyAreaDeletePark(request):
         Park.objects.filter(id=id).delete()
         return HttpResponse("OK")
 
+@login_required()
+def MyHardwarePOS(request):
+    if request.method == 'GET':
+        return render(request, 'myhardware_pos.html', locals())
 
+
+@login_required()
+def GetMyHardwarePosTable(request):
+    if request.method == 'GET':
+        page = int(request.GET.get('page'))
+        limit = int(request.GET.get('limit'))
+        start = (page - 1) * limit - 1
+        if start < 0:
+            start = 0
+        end = page * limit
+
+        # 查询条件，用于表格重载
+        dic = {}
+        status = request.GET.get('status')
+        people = request.GET.get('people')
+        POS_ID = request.GET.get('POS_ID')
+        POS_SN = request.GET.get('POS_SN')
+        POS_Model = request.GET.get('POS_Model')
+
+        if status:
+            dic['status'] = status
+        if people:
+            dic['people__contains'] = people
+        if POS_ID:
+            dic['POS_ID__contains'] = POS_ID
+        if POS_SN:
+            dic['POS_SN__contains'] = POS_SN
+        if POS_Model:
+            dic['POS_Model'] = POS_Model
+
+        try:
+            data = list(POS.objects.filter(**dic).values().order_by('id')[start:end])
+            for i in data:
+                for key, value in i.items():
+                    if type(value) == bool and value:
+                        i[key] = "有"
+                    elif type(value) == bool and not value:
+                        i[key] = "无"
+        except:
+            data = []
+
+        count = len(data)
+        data = {
+            'code': 0,
+            'msg': "",
+            'count': count,
+            'data': data
+        }
+        return JsonResponse(data)
+
+
+@login_required()
+def MyHardwareAddPOS(request):
+    if request.method == 'GET':
+        return render(request, 'myhardware_pos_addmodal.html', locals())
+    elif request.method == 'POST':
+        username = request.user.username
+        createUser = User.objects.get(username=username)
+
+        status = request.POST.get('status')
+        people = request.POST.get('people')
+        POS_Model = request.POST.get('POS_Model')
+        POS_ID = request.POST.get('POS_ID')
+        POS_SN = request.POST.get('POS_SN')
+        POS_Battery = request.POST.get('POS_Battery')
+        POS_Charger = request.POST.get('POS_Charger')
+        TF = request.POST.get('TF')
+        printer = request.POST.get('printer')
+        printer_Charger = request.POST.get('printer_Charger')
+        remark = request.POST.get('remark')
+
+        POS.objects.create(
+            status=status,
+            people=people,
+            POS_Model=POS_Model,
+            POS_ID=POS_ID,
+            POS_SN=POS_SN,
+            POS_Battery=POS_Battery,
+            POS_Charger=POS_Charger,
+            TF=TF,
+            printer=printer,
+            printer_Charger=printer_Charger,
+            remark=remark,
+            createUser=createUser,
+            changeTime=''
+        )
+        data = {
+            'result': 'success'
+        }
+        return JsonResponse(data)
+
+@login_required()
+def MyHardwareEditPOS(request):
+    if request.method == 'GET':
+        id = int(request.GET.get('id'))
+        try:
+            data = POS.objects.filter(id=id)[0]
+        except:
+            data = []
+        return render(request, 'myhardware_pos_editmodal.html', locals())
+    elif request.method == 'POST':  #点击模态框的确认修改按钮
+        username = request.user.username
+        createUser = User.objects.get(username=username)
+
+        id = int(request.POST.get('id'))
+
+        status = request.POST.get('status')
+        people = request.POST.get('people')
+        POS_Model = request.POST.get('POS_Model')
+        POS_ID = request.POST.get('POS_ID')
+        POS_SN = request.POST.get('POS_SN')
+        POS_Battery = request.POST.get('POS_Battery')
+        POS_Charger = request.POST.get('POS_Charger')
+        TF = request.POST.get('TF')
+        printer = request.POST.get('printer')
+        printer_Charger = request.POST.get('printer_Charger')
+        remark = request.POST.get('remark')
+
+        POS.objects.filter(id=id).update(
+            status=status,
+            people=people,
+            POS_Model=POS_Model,
+            POS_ID=POS_ID,
+            POS_SN=POS_SN,
+            POS_Battery=POS_Battery,
+            POS_Charger=POS_Charger,
+            TF=TF,
+            printer=printer,
+            printer_Charger=printer_Charger,
+            remark=remark,
+            createUser=createUser,
+            changeTime=datetime.now()
+        )
+        data = {
+            'result': 'success'
+        }
+        return JsonResponse(data)
+
+@login_required()
+def MyHardwareDeletePOS(request):
+    if request.method == 'POST':
+        id = request.POST.get('id')
+        POS.objects.filter(id=id).delete()
+        return HttpResponse("OK")
+
+@login_required()
+def MyHardwareSearchPOS(request):
+    if request.method == 'GET':
+        dic = {}
+        status = request.GET.get('status')
+        people = request.GET.get('people')
+        POS_ID = request.GET.get('POS_ID')
+        POS_SN = request.GET.get('POS_SN')
+
+        if status:
+            dic['status'] = status
+        if people:
+            dic['people__contains'] = people
+        if POS_ID:
+            dic['POS_ID__contains'] = POS_ID
+        if POS_SN:
+            dic['POS_SN__contains'] = POS_SN
+        try:
+            data = list(POS.objects.filter(**dic).values())
+        except:
+            data = []
+
+        print(data)
+        count = len(data)
+        data = {
+            'code': 0,
+            'msg': "",
+            'count': count,
+            'data': data
+        }
+        return JsonResponse(data)
+
+
+@login_required()
+def MyHardwareCheckPOSID(request):
+    if request.method == 'POST':
+        data = request.POST.get('data')
+        tmp = POS.objects.filter(POS_ID=data)
+        if not tmp:
+            result = "OK"
+        else:
+            result = 'NO'
+        ret = {
+            'result': result
+        }
+        return JsonResponse(ret)
+
+@login_required()
+def MyHardwareCheckPOSSN(request):
+    if request.method == 'POST':
+        data = request.POST.get('data')
+        tmp = POS.objects.filter(POS_SN=data)
+        if not tmp:
+            result = "OK"
+        else:
+            result = 'NO'
+        ret = {
+            'result': result
+        }
+        return JsonResponse(ret)
+
+@login_required()
+def MyHardwareSIM(request):
+    if request.method == 'GET':
+        return render(request, 'myhardware_sim.html', locals())
+
+
+@login_required()
+def GetMyHardwareSIMTable(request):
+    if request.method == 'GET':
+        page = int(request.GET.get('page'))
+        limit = int(request.GET.get('limit'))
+        start = (page - 1) * limit - 1
+        if start < 0:
+            start = 0
+        end = page * limit
+
+        # 查询条件，用于表格重载
+        dic = {}
+        status = request.GET.get('status')
+        people = request.GET.get('people')
+        SIM_ICCID = request.GET.get('SIM_ICCID')
+        SIM_Company = request.GET.get('SIM_Company')
+
+        if status:
+            dic['status'] = status
+        if people:
+            dic['people__contains'] = people
+        if SIM_ICCID:
+            dic['SIM_ICCID__contains'] = SIM_ICCID
+        if SIM_Company:
+            dic['SIM_Company__contains'] = SIM_Company
+
+        try:
+            data = list(SIM.objects.filter(**dic).values().order_by('id')[start:end])
+        except:
+            data = []
+
+        count = len(data)
+        data = {
+            'code': 0,
+            'msg': "",
+            'count': count,
+            'data': data
+        }
+        return JsonResponse(data)
+
+@login_required()
+def MyHardwareAddSIM(request):
+    if request.method == 'GET':
+        return render(request, 'myhardware_sim_addmodal.html', locals())
+    elif request.method == 'POST':
+        username = request.user.username
+        createUser = User.objects.get(username=username)
+
+        status = request.POST.get('status')
+        people = request.POST.get('people')
+        SIM_Company = request.POST.get('SIM_Company')
+        SIM_ICCID = request.POST.get('SIM_ICCID')
+        remark = request.POST.get('remark')
+
+        SIM.objects.create(
+            status=status,
+            people=people,
+            SIM_Company=SIM_Company,
+            SIM_ICCID=SIM_ICCID,
+            remark=remark,
+            createUser=createUser,
+            changeTime=''
+        )
+        data = {
+            'result': 'success'
+        }
+        return JsonResponse(data)
+
+@login_required()
+def MyHardwareEditSIM(request):
+    if request.method == 'GET':
+        id = int(request.GET.get('id'))
+        try:
+            data = SIM.objects.filter(id=id)[0]
+        except:
+            data = []
+        return render(request, 'myhardware_sim_editmodal.html', locals())
+    elif request.method == 'POST':  #点击模态框的确认修改按钮
+        username = request.user.username
+        createUser = User.objects.get(username=username)
+
+        id = int(request.POST.get('id'))
+
+        status = request.POST.get('status')
+        people = request.POST.get('people')
+        SIM_Company = request.POST.get('SIM_Company')
+        SIM_ICCID = request.POST.get('SIM_ICCID')
+        remark = request.POST.get('remark')
+
+        SIM.objects.filter(id=id).update(
+            status=status,
+            people=people,
+            SIM_Company=SIM_Company,
+            SIM_ICCID=SIM_ICCID,
+            remark=remark,
+            createUser=createUser,
+            changeTime=datetime.now()
+        )
+        data = {
+            'result': 'success'
+        }
+        return JsonResponse(data)
+
+@login_required()
+def MyHardwareDeleteSIM(request):
+    if request.method == 'POST':
+        id = request.POST.get('id')
+        SIM.objects.filter(id=id).delete()
+        return HttpResponse("OK")
+
+@login_required()
+def MyHardwareCheckICCID(request):
+    if request.method == 'POST':
+        data = request.POST.get('data')
+        tmp = SIM.objects.filter(SIM_ICCID=data)
+        if not tmp:
+            result = "OK"
+        else:
+            result = 'NO'
+        ret = {
+            'result': result
+        }
+        return JsonResponse(ret)
