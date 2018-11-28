@@ -1,0 +1,182 @@
+<hr class="layui-bg-gray">
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <form class="layui-form layui-form-pane" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">状态</label>
+                    <div class="layui-input-inline">
+                        <select name="status" lay-verify="required">
+                            <option value="">请选择一个状态</option>
+                            <option value="城西片区">城西片区</option>
+                            <option value="城东片区">城东片区</option>
+                            <option value="城南片区">城南片区</option>
+                            <option value="高新片区">高新片区</option>
+                            <option value="游仙片区">游仙片区</option>
+                            <option value="科创园片区">科创园片区</option>
+                            <option value="库存中">库存中</option>
+                            <option value="待返修">待返修</option>
+                            <option value="返修中">返修中</option>
+                            <option value="已遗失">已遗失</option>
+                            <option value="已损坏">已损坏</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">领用人</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="people" lay-verify="required|people" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">POS机型号</label>
+                    <div class="layui-input-inline">
+                        <select name="POS_Model" lay-verify="required">
+                            <option value="">请选择一个型号</option>
+                            <option value="一代">一代</option>
+                            <option value="二代">二代</option>
+                            <option value="三代">三代</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">POS机ID</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="POS_ID" lay-verify="POS_ID" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">POS机SN号</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="POS_SN" lay-verify="required|POS_SN" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">POS机备用电池</label>
+                    <div class="layui-input-inline">
+                        <input type="radio" name="POS_Battery" value="True" title="有" checked>
+                        <input type="radio" name="POS_Battery" value="False" title="无">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">POS机充电器</label>
+                    <div class="layui-input-inline">
+                        <input type="radio" name="POS_Charger" value="True" title="有" checked>
+                        <input type="radio" name="POS_Charger" value="False" title="无">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">TF卡</label>
+                        <input type="radio" name="TF" value="True" title="有" checked>
+                        <input type="radio" name="TF" value="False" title="无">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">打印机</label>
+                    <div class="layui-input-inline">
+                        <input type="radio" name="printer" value="True" title="有" checked>
+                        <input type="radio" name="printer" value="False" title="无">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">打印机充电器</label>
+                    <div class="layui-input-inline">
+                        <input type="radio" name="printer_Charger" value="True" title="有" checked>
+                        <input type="radio" name="printer_Charger" value="False" title="无">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">备注</label>
+                    <div class="layui-input-inline">
+                        <textarea name="remark" placeholder="若无备注信息则不填写" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div style="text-align: right;">
+                    <button class="layui-btn" lay-submit lay-filter="myhardwareaddpos">确认添加</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    form.render();
+    form.on('submit(myhardwareaddpos)', function(data){
+        var index = layer.load(2,{shade:0.3});
+        $.ajax({
+			type: "POST",
+			url: "{% url 'addpos' %}",
+			data: data.field,
+            success:function (data) {
+			    var result = data['result'];
+                if (result == 'success'){
+                    layer.close(index);
+                    layer.msg('新增POS机成功！',{icon:1,time: 5000}, function(){
+                        location.reload();
+                    });
+                }
+                else {
+                    layer.close(index);
+                    layer.msg('新增POS机失败！请检查数据格式！',{icon:2});
+                }
+            }
+		});
+        return false;
+    });
+
+    form.verify({
+        POS_ID: function (value, item) { //value：表单的值、item：表单的DOM对象
+            var msg = '';
+            if(value.length!=16){
+                return 'POS机ID共有16位！';
+            }
+            $.ajax({
+                type: "POST",
+                url: "{% url 'checkposid' %}",
+                async:false,//同步提交。不设置则默认异步，异步的话，最后执行ajax
+                data: {
+                    'data': value
+                },
+                success: function(result) {
+                    msg = result['result']
+                },
+                error: function(error) {
+                    alert(error.status);
+                }
+            });
+
+            if(msg != 'OK'){
+                return "POS机ID已存在！";
+            }
+        },
+        POS_SN: function (value, item) { //value：表单的值、item：表单的DOM对象
+            var msg = '';
+            $.ajax({
+                type: "POST",
+                url: "{% url 'checkpossn' %}",
+                async:false,//同步提交。不设置则默认异步，异步的话，最后执行ajax
+                data: {
+                    'data': value
+                },
+                success: function(result) {
+                    msg = result['result']
+                },
+                error: function(error) {
+                    alert(error.status);
+                }
+            });
+
+            if(msg != 'OK'){
+                return "POS机SN号已存在！";
+            }
+        },
+        people: function (value, item) { //value：表单的值、item：表单的DOM对象
+            var re = new RegExp("^[\u4e00-\u9fa5]+$");
+            if (!re.test(value)) {
+                return "请输入汉字！";
+            }
+        }
+    });
+</script>

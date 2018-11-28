@@ -1,0 +1,132 @@
+<hr class="layui-bg-gray">
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <form class="layui-form layui-form-pane" action="" lay-filter="editform">
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">ID</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="id" disabled class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">状态</label>
+                    <div class="layui-input-inline">
+                        <select name="status" lay-verify="required">
+                            <option value="">请选择一个状态</option>
+                            <option value="城西片区">城西片区</option>
+                            <option value="城东片区">城东片区</option>
+                            <option value="城南片区">城南片区</option>
+                            <option value="高新片区">高新片区</option>
+                            <option value="游仙片区">游仙片区</option>
+                            <option value="科创园片区">科创园片区</option>
+                            <option value="库存中">库存中</option>
+                            <option value="无法使用">无法使用</option>
+                            <option value="已遗失">已遗失</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">领用人</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="people" placeholder="若无则不填写" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">运营商</label>
+                    <div class="layui-input-inline">
+                        <select name="SIM_Company" lay-verify="required">
+                            <option value="">请选择一个运营商</option>
+                            <option value="移动">移动</option>
+                            <option value="联通">联通</option>
+                            <option value="电信">电信</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">ICCID</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="SIM_ICCID" lay-verify="required|SIM_ICCID" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+				<div class="layui-form-item">
+                    <label class="layui-form-label" style="width:150px">备注</label>
+                    <div class="layui-input-inline">
+                        <textarea name="remark" placeholder="若无备注信息则不填写" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div style="text-align: right;">
+                    <button class="layui-btn" lay-submit lay-filter="confirmeditsim">确认修改</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    form.render();
+
+    <!--初始赋值-->
+    form.val("editform", {
+    "id": "{{ data.id }}",
+    "status": "{{ data.status }}",
+    "people": "{{ data.people }}",
+    "SIM_Company": "{{ data.SIM_Company }}",
+    "SIM_ICCID": "{{ data.SIM_ICCID }}",
+    "remark": "{{ data.remark }}",
+    "changeTime": "{{ data.changeTime }}"
+    });
+
+    form.on('submit(confirmeditsim)', function(data){
+        var index = layer.load(2,{shade:0.3});
+        $.ajax({
+			type: "POST",
+			url: "{% url 'editsim' %}",
+			data: data.field,
+            success:function (data) {
+			    var result = data['result'];
+                if (result == 'success'){
+                    layer.close(index);
+                    layer.msg('修改成功！',{icon:1,time: 3000}, function(){
+                        location.reload();
+                    });
+                }
+                else {
+                    layer.close(index);
+                    layer.msg('修改失败！请检查数据格式！',{icon:2});
+                }
+            }
+		});
+        return false;
+    });
+
+    form.verify({
+        SIM_ICCID: function (value, item) { //value：表单的值、item：表单的DOM对象
+            var msg = '';
+            if(value.length!=20){
+                return 'ICCID共有20位！';
+            }
+            $.ajax({
+                type: "POST",
+                url: "{% url 'checkiccid' %}",
+                async:false,//同步提交。不设置则默认异步，异步的话，最后执行ajax
+                data: {
+                    'data': value
+                },
+                success: function(result) {
+                    msg = result['result']
+                },
+                error: function(error) {
+                    alert(error.status);
+                }
+            });
+
+            if(msg != 'OK'){
+                return "ICCID已存在！";
+            }
+        }
+    });
+</script>

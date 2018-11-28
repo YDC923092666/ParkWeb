@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51ffcd9c-2685-497f-81d2-b0cd7d80456a" name="Default" comment="修改“备注”位置">
+    <list default="true" id="51ffcd9c-2685-497f-81d2-b0cd7d80456a" name="Default" comment="添加硬件管理功能">
+      <change afterPath="$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/myhardware_pos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/myhardware_pos_editmodal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/myhardware_sim.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="82be2510-75fd-49a5-8fb8-cf74197695fe" name="ignore" comment="ignore" />
@@ -28,21 +32,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+<<<<<<< Updated upstream
           <entry key="html" value="1214" />
           <entry key="py" value="1767" />
           <entry key="txt" value="64" />
+=======
+          <entry key="html" value="1216" />
+          <entry key="py" value="1763" />
+          <entry key="txt" value="72" />
+>>>>>>> Stashed changes
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+<<<<<<< Updated upstream
           <entry key="HTML" value="1214" />
           <entry key="PLAIN_TEXT" value="64" />
           <entry key="Python" value="1767" />
+=======
+          <entry key="HTML" value="1216" />
+          <entry key="PLAIN_TEXT" value="72" />
+          <entry key="Python" value="1763" />
+>>>>>>> Stashed changes
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="24" />
+          <entry key="html" value="26" />
           <entry key="md" value="1" />
           <entry key="py" value="7" />
           <entry key="rnc" value="1" />
@@ -50,7 +66,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="24" />
+          <entry key="HTML" value="26" />
           <entry key="Markdown" value="1" />
           <entry key="Python" value="7" />
           <entry key="RNG Compact" value="1" />
@@ -63,11 +79,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="23055">
+=======
+            <state relative-caret-position="63">
+>>>>>>> Stashed changes
               <caret line="849" column="85" selection-start-line="849" selection-start-column="85" selection-end-line="849" selection-end-column="85" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
                 <element signature="e#19202#21315#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding>
+                <element signature="e#44#1360#0" />
+                <element signature="e#1423#2292#0" />
+                <element signature="e#2348#2591#0" />
               </folding>
             </state>
           </provider>
@@ -109,6 +143,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
+=======
+        <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_sim.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+>>>>>>> Stashed changes
         <entry file="file://$PROJECT_DIR$/app/templates/myhardware_sim.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2001">
@@ -181,7 +227,6 @@
         <option value="$PROJECT_DIR$/app/templates/js/js_index.html" />
         <option value="$PROJECT_DIR$/app/templates/myareapark_addmodal.html" />
         <option value="$PROJECT_DIR$/app/templates/myareapark_editmodal.html" />
-        <option value="$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html" />
         <option value="$PROJECT_DIR$/app/templates/myhardware_pos.html" />
         <option value="$PROJECT_DIR$/app/templates/myhardware_pos_addmodal.html" />
         <option value="$PROJECT_DIR$/app/templates/myhardware_pos_editmodal.html" />
@@ -192,9 +237,13 @@
         <option value="$PROJECT_DIR$/mysite/urls.py" />
         <option value="$PROJECT_DIR$/app/templates/myhardware_sim_editmodal.html" />
         <option value="$PROJECT_DIR$/app/templates/myhardware_sim_addmodal.html" />
-        <option value="$PROJECT_DIR$/app/templates/js/js_myhardware_sim.html" />
         <option value="$PROJECT_DIR$/app/views.py" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/mysite/settings.py" />
+=======
+        <option value="$PROJECT_DIR$/app/templates/js/js_myhardware_sim.html" />
+        <option value="$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -466,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541480533997</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="修改“备注”位置">
+      <created>1543393482570</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1543393482570</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -480,10 +536,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
+<<<<<<< Updated upstream
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.26332623" />
+=======
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.26066098" />
+>>>>>>> Stashed changes
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.3297062" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49947312" weight="0.28633407" />
@@ -523,7 +582,8 @@
     <MESSAGE value="修改model文件编码" />
     <MESSAGE value="修改setting文件" />
     <MESSAGE value="修改“备注”位置" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改“备注”位置" />
+    <MESSAGE value="添加硬件管理功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加硬件管理功能" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/templates/gamemanage.html" />
@@ -707,11 +767,33 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/templates/myhardware_pos_addmodal.html" />
     <entry file="file://$PROJECT_DIR$/app/templates/myhardware_pos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="67" column="61" lean-forward="true" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/templates/myhardware_pos_addmodal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-692">
+          <caret line="28" column="85" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="85" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#8;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#9;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#10;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#6358#7944#0" />
+            <element signature="e#7066#7692#0" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -730,6 +812,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
@@ -737,6 +820,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -780,10 +865,16 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_sim.html" />
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23055">
+=======
+    <entry file="file://$PROJECT_DIR$/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+>>>>>>> Stashed changes
           <caret line="849" column="85" selection-start-line="849" selection-start-column="85" selection-end-line="849" selection-end-column="85" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
@@ -792,10 +883,44 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/mysite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="73" column="10" lean-forward="true" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/templates/myhardware_pos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="67" column="61" lean-forward="true" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_sim.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/js/js_myhardware_pos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding>
+            <element signature="e#44#1360#0" />
+            <element signature="e#1423#2292#0" />
+            <element signature="e#2348#2591#0" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
