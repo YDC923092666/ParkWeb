@@ -109,24 +109,6 @@
             if(value.length!=20){
                 return 'ICCID共有20位！';
             }
-            $.ajax({
-                type: "POST",
-                url: "{% url 'checkiccid' %}",
-                async:false,//同步提交。不设置则默认异步，异步的话，最后执行ajax
-                data: {
-                    'data': value
-                },
-                success: function(result) {
-                    msg = result['result']
-                },
-                error: function(error) {
-                    alert(error.status);
-                }
-            });
-
-            if(msg != 'OK'){
-                return "ICCID已存在！";
-            }
         }
     });
 </script>

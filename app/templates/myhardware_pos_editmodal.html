@@ -152,48 +152,8 @@
 
     form.verify({
         POS_ID: function (value, item) { //value：表单的值、item：表单的DOM对象
-            var msg = '';
             if(value.length<15){
                 return 'POS机ID至少有15位！';
-            }
-            $.ajax({
-                type: "POST",
-                url: "{% url 'checkposid' %}",
-                async:false,//同步提交。不设置则默认异步，异步的话，最后执行ajax
-                data: {
-                    'data': value
-                },
-                success: function(result) {
-                    msg = result['result']
-                },
-                error: function(error) {
-                    alert(error.status);
-                }
-            });
-
-            if(msg != 'OK'){
-                return "POS机ID已存在！";
-            }
-        },
-        POS_SN: function (value, item) { //value：表单的值、item：表单的DOM对象
-            var msg = '';
-            $.ajax({
-                type: "POST",
-                url: "{% url 'checkpossn' %}",
-                async:false,//同步提交。不设置则默认异步，异步的话，最后执行ajax
-                data: {
-                    'data': value
-                },
-                success: function(result) {
-                    msg = result['result']
-                },
-                error: function(error) {
-                    alert(error.status);
-                }
-            });
-
-            if(msg != 'OK'){
-                return "POS机SN号已存在！";
             }
         },
         people: function (value, item) { //value：表单的值、item：表单的DOM对象

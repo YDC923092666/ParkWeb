@@ -290,6 +290,7 @@ def MyReview(request):
         return render(request, 'myreview.html', locals())
 
 @login_required()
+@permission_required('app.can_review')
 def MyReviewGetBerthTable(request):
     if request.method == 'GET':
         li = list(Berth.objects.all().\
@@ -308,6 +309,7 @@ def MyReviewGetBerthTable(request):
         return JsonResponse(data)
 
 @login_required()
+@permission_required('app.can_review')
 def MyReviewTaBle1NoPass(request):
     if request.method == 'POST':
         id = request.POST.get('id')
@@ -315,6 +317,7 @@ def MyReviewTaBle1NoPass(request):
         return HttpResponse("OK")
 
 @login_required()
+@permission_required('app.can_review')
 def MyReviewTaBle1Pass(request):
     if request.method == 'POST':
         id = request.POST.get('id')
@@ -382,6 +385,7 @@ def MyReviewTaBle1Pass(request):
         return HttpResponse("OK")
 
 @login_required()
+@permission_required('app.can_review')
 def MyReviewGetManTable(request):
     if request.method == 'GET':
         li = list(Shoufeiyuan.objects.filter(isPassed=False).\
@@ -399,12 +403,14 @@ def MyReviewGetManTable(request):
         return JsonResponse(data)
 
 @login_required()
+@permission_required('app.can_review')
 def MyReviewTaBle2NoPass(request):
         id = request.POST.get('id')
         Shoufeiyuan.objects.filter(id=id).delete()
         return HttpResponse("OK")
 
 @login_required()
+@permission_required('app.can_review')
 def MyReviewTaBle2Pass(request):
     if request.method == 'POST':
         id = request.POST.get('id')
@@ -604,6 +610,7 @@ def MyAreaDeletePark(request):
         return HttpResponse("OK")
 
 @login_required()
+@permission_required('app.can_edit_hardware')
 def MyHardwarePOS(request):
     if request.method == 'GET':
         return render(request, 'myhardware_pos.html', locals())
@@ -815,6 +822,7 @@ def MyHardwareCheckPOSSN(request):
         return JsonResponse(ret)
 
 @login_required()
+@permission_required('app.can_edit_hardware')
 def MyHardwareSIM(request):
     if request.method == 'GET':
         return render(request, 'myhardware_sim.html', locals())
