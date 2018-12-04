@@ -656,7 +656,8 @@ def GetMyHardwarePosTable(request):
         except:
             data = []
 
-        count = len(data)
+        li = list(POS.objects.all())
+        count = len(li)
         data = {
             'code': 0,
             'msg': "",
@@ -859,7 +860,8 @@ def GetMyHardwareSIMTable(request):
         except:
             data = []
 
-        count = len(data)
+        li = list(SIM.objects.all())
+        count = len(li)
         data = {
             'code': 0,
             'msg': "",

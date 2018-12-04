@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'parkingwebtest',
+        'NAME': 'parkingweb',
         'USER': 'yangdongcheng',
         'PASSWORD': '1993811YDC!@#$',
         'HOST': '47.52.142.67',
