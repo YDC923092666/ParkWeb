@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'parkingweb',
+        'NAME': 'parkingwebtest',
         'USER': 'yangdongcheng',
         'PASSWORD': '1993811YDC!@#$',
         'HOST': '47.52.142.67',
@@ -126,4 +126,4 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = "/home/yangdongcheng/parkingweb/app/static"
+# STATIC_ROOT = "/home/yangdongcheng/parkingweb/app/static"
