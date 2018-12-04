@@ -647,6 +647,7 @@ def GetMyHardwarePosTable(request):
 
         try:
             data = list(POS.objects.filter(**dic).values().order_by('id')[start:end])
+            li = list(POS.objects.filter(**dic))
             for i in data:
                 for key, value in i.items():
                     if type(value) == bool and value:
@@ -655,8 +656,8 @@ def GetMyHardwarePosTable(request):
                         i[key] = "无"
         except:
             data = []
+            li = []
 
-        li = list(POS.objects.all())
         count = len(li)
         data = {
             'code': 0,
@@ -857,10 +858,11 @@ def GetMyHardwareSIMTable(request):
 
         try:
             data = list(SIM.objects.filter(**dic).values().order_by('id')[start:end])
+            li = list(SIM.objects.filter(**dic))
         except:
             data = []
+            li = []
 
-        li = list(SIM.objects.all())
         count = len(li)
         data = {
             'code': 0,
